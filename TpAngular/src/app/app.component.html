@@ -1,0 +1,11 @@
+<div *ngIf="books.length > 0; else noBooksMessage">
+  <ul>
+    <li *ngFor="let book of books">
+      <input type="checkbox" [checked]="book.isRead" disabled />
+      {{ book.name }}
+    </li>
+  </ul>
+</div>
+<ng-template #noBooksMessage>
+  <p>No books available.</p>
+</ng-template>
